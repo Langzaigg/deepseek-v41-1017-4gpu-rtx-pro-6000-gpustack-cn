@@ -1,5 +1,7 @@
 # Project context
 
+Repository name: `deepseek-v41-1017-4gpu-rtx-pro-6000-gpustack-cn`. GitHub description is in `description.txt` and the README. Keep the existing runtime ownership marker `deepseek-v41-1017-gpustack-cn` stable so renaming the repository does not orphan existing managed deployments.
+
 GPUStack 2.2.3 deployment for DeepSeek V4.1 Flash 1017 on one Linux Docker Worker with four RTX PRO 6000 Blackwell 96GB cards. ModelScope supplies weights; DaoCloud or an existing Docker proxy supplies image layers. UTF-8 / LF files; development may run on Windows.
 
 - The README contains both the one-command deployment and the semi-manual GPUStack UI procedure. Keep both paths consistent with `profiles/ram-4gpu.json` and generated `gpustack/` examples.

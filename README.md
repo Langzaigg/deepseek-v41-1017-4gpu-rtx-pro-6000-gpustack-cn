@@ -1,4 +1,8 @@
-# DeepSeek V4.1 Flash 1017 · GPUStack 国内部署
+# DeepSeek V4.1 Flash 1017 · 4 × RTX PRO 6000 · GPUStack 国内部署
+
+仓库名：`deepseek-v41-1017-4gpu-rtx-pro-6000-gpustack-cn`
+
+GitHub description：面向 4 张 RTX PRO 6000 Blackwell 96GB 的 DeepSeek V4.1 Flash 1017 GPUStack 部署工具，提供一键部署与半手动教程，适配 ModelScope、国内镜像及 Clash 代理，包含 RAM Engram、DSPARK 和 512K 上下文配置。
 
 在已有 GPUStack Docker Worker 上，使用 **4 张 RTX PRO 6000 Blackwell 96GB + RAM Engram + DSPARK** 部署官方 `deepseek-ai/DeepSeek-V4.1-Flash-1017`。模型由 GPUStack 从 **ModelScope** 下载，推理镜像从 **DaoCloud** 拉取基础层，也可使用已配置的 Clash Docker 代理。
 
