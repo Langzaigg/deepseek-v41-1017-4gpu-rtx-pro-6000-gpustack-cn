@@ -1,0 +1,25 @@
+"backend_name": "deepseek-v4.1-flash-1017-cn-custom"
+"description": "managed-by:deepseek-v41-1017-gpustack-cn"
+"backend_source": "custom"
+"enabled": true
+"default_version": "1.0.0-custom"
+"health_check_path": "/health"
+"default_backend_param": []
+"default_entrypoint": "python3 -u /opt/dsv41/launch.py"
+"default_run_command": "--model-path \"{{model_path}}\" --host {{worker_ip}} --port {{port}} --served-model-name \"{{model_name}}\""
+"default_env":
+  "OFFLOAD_MODE": "ram"
+  "DSV41_CACHE_GIB": "0"
+  "CONTEXT_LENGTH": "524288"
+  "MAX_RUNNING_REQUESTS": "8"
+  "MAX_TOTAL_TOKENS": "4200000"
+  "MEMORY_FRACTION": "0.95"
+  "CHUNKED_PREFILL_SIZE": "2048"
+  "ENABLE_DSPARK": "1"
+  "GPUSTACK_MODEL_RUNTIME_SHM_SIZE_GIB": "32"
+  "HF_HUB_OFFLINE": "1"
+  "TRANSFORMERS_OFFLINE": "1"
+"version_configs":
+  "1.0.0-custom":
+    "image_name": "dsv41-1017-gpustack-cn:1.0.0"
+    "custom_framework": "cuda"

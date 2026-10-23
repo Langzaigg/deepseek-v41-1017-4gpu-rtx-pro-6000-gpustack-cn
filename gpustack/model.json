@@ -1,0 +1,50 @@
+{
+  "name": "deepseek-v4.1-flash-1017-cn",
+  "description": "4 x SM120 / RAM Engram / ModelScope",
+  "meta": {
+    "managed_by": "deepseek-v41-1017-gpustack-cn"
+  },
+  "source": "model_scope",
+  "model_scope_model_id": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+  "replicas": 1,
+  "categories": [
+    "llm"
+  ],
+  "placement_strategy": "spread",
+  "cpu_offloading": true,
+  "distributed_inference_across_workers": false,
+  "distributable": false,
+  "worker_selector": {},
+  "gpu_selector": {
+    "gpu_ids": [
+      "YOUR_WORKER:cuda:2",
+      "YOUR_WORKER:cuda:3",
+      "YOUR_WORKER:cuda:4",
+      "YOUR_WORKER:cuda:5"
+    ],
+    "gpus_per_replica": 4
+  },
+  "backend": "deepseek-v4.1-flash-1017-cn-custom",
+  "backend_version": "1.0.0-custom",
+  "backend_parameters": [],
+  "image_name": null,
+  "run_command": null,
+  "env": {
+    "OFFLOAD_MODE": "ram",
+    "DSV41_CACHE_GIB": "0",
+    "CONTEXT_LENGTH": "524288",
+    "MAX_RUNNING_REQUESTS": "8",
+    "MAX_TOTAL_TOKENS": "4200000",
+    "MEMORY_FRACTION": "0.95",
+    "CHUNKED_PREFILL_SIZE": "2048",
+    "ENABLE_DSPARK": "1",
+    "GPUSTACK_MODEL_RUNTIME_SHM_SIZE_GIB": "32",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1"
+  },
+  "restart_on_error": false,
+  "cluster_id": 1,
+  "speculative_config": null,
+  "extended_kv_cache": null,
+  "enable_model_route": true
+}

@@ -1,0 +1,4 @@
+* text=auto eol=lf
+adapter/* -text
+runtime/* -text
+licenses/* -text

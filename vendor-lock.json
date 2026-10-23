@@ -1,0 +1,42 @@
+{
+  "repository": "https://github.com/sybil-solutions/deepseek-v4.1-flash-4x-rtx-pro-6000",
+  "commit": "ce69105cb5812638e5fdba7ffecfb23945e11948",
+  "base_image": "lmsysorg/sglang@sha256:c4ca651192e57e91989b5176c3665148131b9a171e53861dee87f5e57cef25b5",
+  "files": {
+    "adapter/sitecustomize.py": {
+      "upstream_path": "adapter/sitecustomize.py",
+      "git_blob_sha1": "50ba5ad23b3ed0418ec881fbe7c29bb9d3a879d7",
+      "sha256": "a7cd39a11634fab7b7e693daf305a1d9ea61a75dc007c88c29607ce6aa0ba514"
+    },
+    "adapter/engram_backend.py": {
+      "upstream_path": "adapter/engram_backend.py",
+      "git_blob_sha1": "0115de272ef0ebeaa879476b4b8a395b2076174e",
+      "sha256": "96954a4d4dd46ede2cbdb24dd640f9e935ef591967be93c675ca6748121cfd2e"
+    },
+    "adapter/row_store.cpp": {
+      "upstream_path": "adapter/row_store.cpp",
+      "git_blob_sha1": "408316fbdc6f8eff3fcc16b3d6862bcc857bf464",
+      "sha256": "5a23a751811e1beac2a931db7cb78afc1bd37a2830cb28dbc83c063e6ebb461f"
+    },
+    "runtime/flash_mla_sm120.py": {
+      "upstream_path": "runtime/flash_mla_sm120.py",
+      "git_blob_sha1": "732435341684a8d2f709086d44ab837b6fbd1694",
+      "sha256": "fe7f78bead1f74efad00b5c1a5dfb36f71f55cffbb26518088e6f7ca99d971ae"
+    },
+    "licenses/LICENSE.upstream-MIT": {
+      "upstream_path": "LICENSE",
+      "git_blob_sha1": "2ddb47631dd807e1b197750163cd1396a962bb66",
+      "sha256": "cafea160e12f3e5e2c8692d58c5c5f8535b3348830ab6f337f138b8ee67d6b1c"
+    },
+    "licenses/LICENSE.sglang-Apache-2.0": {
+      "upstream_path": "LICENSE.sglang",
+      "git_blob_sha1": "9c422689c8f5c317c7c65153b1209349ec57007e",
+      "sha256": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747"
+    },
+    "licenses/NOTICE.upstream": {
+      "upstream_path": "NOTICE",
+      "git_blob_sha1": "076b0665d72b7c7c7c8c2eee2c431eb5510ed159",
+      "sha256": "6afa5242926119b0158a0c72bd22f598c74304dc091c653fe1b4676e3d9997fb"
+    }
+  }
+}

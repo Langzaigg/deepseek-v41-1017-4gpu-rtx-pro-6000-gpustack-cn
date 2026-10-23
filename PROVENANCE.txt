@@ -1,0 +1,23 @@
+Deployment integration prepared 2026-10-23.
+
+Vendored adapter and SM120 attention patch:
+https://github.com/sybil-solutions/deepseek-v4.1-flash-4x-rtx-pro-6000
+Commit: ce69105cb5812638e5fdba7ffecfb23945e11948
+The seven byte-identical vendored files and their hashes are in vendor-lock.json.
+
+Base image:
+lmsysorg/sglang@sha256:c4ca651192e57e91989b5176c3665148131b9a171e53861dee87f5e57cef25b5
+
+GPUStack integration reference:
+https://github.com/gpustack/gpustack/tree/v2.2.3
+gpustack/routes/inference_backend.py
+gpustack/routes/models.py
+gpustack/schemas/inference_backend.py
+gpustack/schemas/models.py
+gpustack/schemas/workers.py
+gpustack/worker/backends/custom.py
+gpustack/worker/backends/base.py
+
+This repository vendors the upstream serving adapter, not model weights.
+Deployment scripts, launch wrapper and documentation are local integration work.
+No target-GPU end-to-end, long-context or throughput benchmark is included.

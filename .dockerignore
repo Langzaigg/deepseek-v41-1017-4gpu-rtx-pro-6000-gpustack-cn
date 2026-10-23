@@ -1,0 +1,11 @@
+*
+!Dockerfile
+!launch.py
+!adapter/
+!adapter/**
+!runtime/
+!runtime/**
+!licenses/
+!licenses/**
+**/__pycache__
+**/*.pyc
