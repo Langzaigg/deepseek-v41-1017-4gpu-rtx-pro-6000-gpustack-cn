@@ -228,7 +228,7 @@ def parse_indexes(value):
     try:
         indexes = [int(x.strip()) for x in value.split(",")]
     except ValueError as exc:
-        raise DeployError("GPU 编号格式：2,3,4,5") from exc
+        raise DeployError("GPU 编号格式：0,1,2,3") from exc
     if len(indexes) != 4 or len(set(indexes)) != 4 or min(indexes) < 0:
         raise DeployError("必须提供四个不同的非负 GPU 编号。")
     return sorted(indexes)
@@ -467,7 +467,7 @@ def deploy(args):
     log(f'目标 Worker：{worker["name"]} / cluster {worker["cluster_id"]}')
     for gpu in local:
         log(f'  GPU {gpu["index"]}: {gpu["name"]}, 已用 {gpu["used_mib"]:.0f} MiB, {gpu["uuid"]}')
-    indexes = parse_indexes(prompt_value(args.gpus, "指定本机四张空闲 GPU 编号（例如 2,3,4,5）："))
+    indexes = parse_indexes(prompt_value(args.gpus, "指定本机四张空闲 GPU 编号（例如 0,1,2,3）："))
     selected = map_gpus(worker, local, indexes)
     desired_backend = backend_payload(args.name, args.image, env, worker.get("owner_principal_id"))
     desired_model = model_payload(args.name, worker, [g["api_index"] for g in selected], env)

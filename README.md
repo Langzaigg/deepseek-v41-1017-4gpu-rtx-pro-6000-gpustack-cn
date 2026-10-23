@@ -23,24 +23,24 @@
 bash deploy.sh
 ```
 
-按提示填写 GPUStack **服务根地址**、API Key 和**本机**四张空闲卡编号。例如 `2,3,4,5` 仅为示例，请以本机 `nvidia-smi` 为准。API Key 隐藏输入且不保存。
+按提示填写 GPUStack **服务根地址**、API Key 和**本机**四张空闲卡编号。例如 `0,1,2,3` 仅为示例，请以本机 `nvidia-smi` 为准。API Key 隐藏输入且不保存。
 
 工具自动完成：校验上游文件 → 匹配 Worker/GPU UUID → 校验四卡空闲 → 构建镜像 → 创建独立自定义后端 → 创建 ModelScope 模型和 API 路由 → 等待下载及初始化 → 核对真实容器环境变量和 `/server_info` → 执行短问答。
 
 也可以预设参数，Key 仍使用隐藏输入：
 
 ```bash
-bash deploy.sh --url http://10.0.0.10:80 --worker YOUR_WORKER --gpus 2,3,4,5
+bash deploy.sh --url http://10.0.0.10:80 --worker YOUR_WORKER --gpus 0,1,2,3
 ```
 
 非交互执行时，用当前 shell 的 `GPUSTACK_URL`、`GPUSTACK_API_KEY` 环境变量提供地址和密钥；不要将 Key 放进脚本或 Git。
 
 ```bash
 # 只读检查、生成计划，不构建镜像、不写 GPUStack
-bash deploy.sh --url http://10.0.0.10:80 --worker YOUR_WORKER --gpus 2,3,4,5 --plan
+bash deploy.sh --url http://10.0.0.10:80 --worker YOUR_WORKER --gpus 0,1,2,3 --plan
 
 # 修改 profile 后，重建本工具创建的模型实例
-bash deploy.sh --url http://10.0.0.10:80 --worker YOUR_WORKER --gpus 2,3,4,5 --redeploy
+bash deploy.sh --url http://10.0.0.10:80 --worker YOUR_WORKER --gpus 0,1,2,3 --redeploy
 ```
 
 默认模型名 `deepseek-v4.1-flash-1017-cn`，后端名 `deepseek-v4.1-flash-1017-cn-custom`，镜像 `dsv41-1017-gpustack-cn:1.0.0`。可用 `--name` 和 `--image` 修改。
@@ -116,7 +116,7 @@ Environment="NO_PROXY=localhost,127.0.0.1,::1,10.0.0.10,YOUR_WORKER_IP"
 
 ```bash
 python3 scripts/deploy.py render \
-  --worker YOUR_WORKER --cluster-id 1 --gpus 2,3,4,5 \
+  --worker YOUR_WORKER --cluster-id 1 --gpus 0,1,2,3 \
   --name deepseek-v4.1-flash-1017-cn \
   --image dsv41-1017-gpustack-cn:1.0.0
 ```
@@ -171,7 +171,7 @@ RAM 模式会将完整 Engram 表映射并锁在主机内存；`DSV41_CACHE_GIB`
 
 ```bash
 python3 scripts/deploy.py verify \
-  --url http://10.0.0.10:80 --worker YOUR_WORKER --gpus 2,3,4,5
+  --url http://10.0.0.10:80 --worker YOUR_WORKER --gpus 0,1,2,3
 ```
 
 这里 `--gpus` 和一键模式一样填写**本机 nvidia-smi 编号**，工具会通过 UUID 映射。若使用自定义名称/镜像/profile，传入相同的 `--name`、`--image`、`--profile`。

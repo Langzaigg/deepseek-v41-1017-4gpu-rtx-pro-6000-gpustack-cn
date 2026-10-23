@@ -17,10 +17,10 @@
   "worker_selector": {},
   "gpu_selector": {
     "gpu_ids": [
+      "YOUR_WORKER:cuda:0",
+      "YOUR_WORKER:cuda:1",
       "YOUR_WORKER:cuda:2",
-      "YOUR_WORKER:cuda:3",
-      "YOUR_WORKER:cuda:4",
-      "YOUR_WORKER:cuda:5"
+      "YOUR_WORKER:cuda:3"
     ],
     "gpus_per_replica": 4
   },
