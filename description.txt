@@ -1,1 +1,1 @@
-面向 4 张 RTX PRO 6000 Blackwell 96GB 的 DeepSeek V4.1 Flash 1017 GPUStack 部署工具，提供一键部署与半手动教程，适配 ModelScope、国内镜像及 Clash 代理，包含 RAM Engram、DSPARK 和 512K 上下文配置。
+面向 4 张 RTX PRO 6000 Blackwell 96GB 的 DeepSeek V4.1 Flash 1017 部署工具，支持 GPUStack 与独立 Docker 部署，提供部署包及教程，适配 ModelScope、国内镜像和 Clash，包含 RAM Engram、DSPARK 与 512K 上下文配置。

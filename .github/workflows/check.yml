@@ -15,3 +15,5 @@ jobs:
           python-version: ${{ matrix.python }}
       - run: python -m unittest discover -s tests -v
       - run: bash -n deploy.sh
+      - run: bash -n deploy-docker.sh
+      - run: bash -n download-model.sh

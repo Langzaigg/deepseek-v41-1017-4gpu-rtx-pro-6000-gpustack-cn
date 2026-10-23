@@ -1,6 +1,7 @@
 __pycache__/
 *.py[cod]
 .venv/
+.venv*/
 .env
 .env.*
 !.env.example
@@ -12,6 +13,7 @@ generated/
 *.bin
 *.tar
 *.zip
+!packages/*.zip
 *.so
 *.key
 models/

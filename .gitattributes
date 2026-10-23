@@ -2,3 +2,4 @@
 adapter/* -text
 runtime/* -text
 licenses/* -text
+packages/*.zip binary

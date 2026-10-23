@@ -61,7 +61,7 @@ def load_profile(path=None):
     if data["OFFLOAD_MODE"] != "ram" or data["DSV41_CACHE_GIB"] != "0":
         raise DeployError("本工具固定使用 RAM 全量 Engram，DSV41_CACHE_GIB=0。")
     if any(data[k] != "1" for k in ("HF_HUB_OFFLINE", "TRANSFORMERS_OFFLINE")):
-        raise DeployError("推理容器必须离线读取 GPUStack 已下载的权重。")
+        raise DeployError("推理容器必须离线读取已下载的本地权重。")
     context = int(data["CONTEXT_LENGTH"])
     total = int(data["MAX_TOTAL_TOKENS"])
     chunk = int(data["CHUNKED_PREFILL_SIZE"])
@@ -286,13 +286,13 @@ def check_free(selected, instances, worker_id, owned_id=None):
 
 def host_preflight():
     if sys.platform != "linux":
-        raise DeployError("deploy/build/verify 请在目标 Linux Docker Worker 上执行；render 可在 Windows 使用。")
+        raise DeployError("deploy/build/verify 请在目标 Linux Docker 宿主机执行；render 可在 Windows 使用。")
     run(["docker", "info", "--format", "{{.ServerVersion}}"])
     # Prevent accidentally building on another Docker daemon while checking local GPUs.
     context = run(["docker", "context", "inspect"]).stdout
     host = os.environ.get("DOCKER_HOST") or json.loads(context)[0]["Endpoints"]["docker"]["Host"]
     if not host.startswith("unix://"):
-        raise DeployError("请使用本机 Unix socket 的 Docker daemon，与 GPUStack Worker 共用镜像存储。")
+        raise DeployError("请使用本机 Unix socket 的 Docker daemon；GPUStack 部署时须与 Worker 共用镜像存储。")
 
 
 def memory_preflight():
